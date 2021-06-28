@@ -1,13 +1,16 @@
 package zen.lol.skyblockcore;
 
-import net.milkbowl.vault.chat.Chat;
 import net.milkbowl.vault.economy.Economy;
-import net.milkbowl.vault.permission.Permission;
+import org.bukkit.Bukkit;
+import org.bukkit.ChatColor;
+import org.bukkit.entity.Player;
 import org.bukkit.plugin.RegisteredServiceProvider;
 import org.bukkit.plugin.java.JavaPlugin;
 import zen.lol.skyblockcore.commands.Economy.WithdrawCmd;
 import zen.lol.skyblockcore.events.MoneyNoteListener;
 
+import java.util.List;
+import java.util.Random;
 import java.util.logging.Logger;
 
 public class Skyblockcore extends JavaPlugin {
@@ -24,6 +27,22 @@ public class Skyblockcore extends JavaPlugin {
 
         this.getCommand("withdraw").setExecutor(new WithdrawCmd());
         getServer().getPluginManager().registerEvents(new MoneyNoteListener(), this);
+        this.saveDefaultConfig();
+        Bukkit.getScheduler().runTaskTimer(this, new Runnable() {
+            @Override
+            public void run() {
+                for(Player player : Bukkit.getServer().getOnlinePlayers()){
+                    List<String> messages = getConfig().getStringList("messages");
+                    int count = messages.size();
+                    Random rand = new Random();
+                    int i = rand.nextInt(count);
+
+                    player.sendMessage(ChatColor.GOLD + "" + ChatColor.BOLD + " ? " +
+                            ChatColor.translateAlternateColorCodes('&', messages.get(i))
+                    );
+                }
+            }
+        }, 6000L, 6000L);
     }
 
     @Override
