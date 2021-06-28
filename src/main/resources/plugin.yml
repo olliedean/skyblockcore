@@ -1,0 +1,14 @@
+name: SkyblockCore
+version: ${project.version}
+main: zen.lol.skyblockcore.Skyblockcore
+api-version: 1.17
+depend:
+  - NBTAPI
+authors: [ zen ]
+description: A skyblock core plugin
+website: https://zen.lol/
+commands:
+  withdraw:
+    description: Withdraw a money note
+    permission: zen.withdraw
+
