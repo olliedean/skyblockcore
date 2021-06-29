@@ -7,6 +7,7 @@ import org.bukkit.entity.Player;
 import org.bukkit.plugin.RegisteredServiceProvider;
 import org.bukkit.plugin.java.JavaPlugin;
 import zen.lol.skyblockcore.commands.Economy.WithdrawCmd;
+import zen.lol.skyblockcore.events.JoinLeaveMessages;
 import zen.lol.skyblockcore.events.MoneyNoteListener;
 
 import java.util.List;
@@ -27,6 +28,7 @@ public class Skyblockcore extends JavaPlugin {
 
         this.getCommand("withdraw").setExecutor(new WithdrawCmd());
         getServer().getPluginManager().registerEvents(new MoneyNoteListener(), this);
+        getServer().getPluginManager().registerEvents(new JoinLeaveMessages(), this);
         this.saveDefaultConfig();
         Bukkit.getScheduler().runTaskTimer(this, new Runnable() {
             @Override
