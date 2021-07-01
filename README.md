@@ -15,6 +15,17 @@ Skyblock Core is the only plugin you'll ever need for your Minecraft Skyblock se
 
 View the [Projects page](https://github.com/olliedean/skyblockcore/projects/1) to see our progress.
 
+**DISCLAIMER:**
+This project is VERY new and I am also very new to Java development.
+That being said, the following problems may be present in my current code:
+- Permissions not set up
+- Money notes exploits (generating cash you don't have)
+- No auto completes
+- Lackluster command descriptions
+I'm pretty dumb, but these are all issues I can fix, I'm just trying to prioritize stuff, even if it's in a weird way.
+My recommendation is to only use this plugin once the releases hits version 1, or this message disappears from the README.
+Thank you for showing interest in my plugin though! I hope me open sourcing it gives both an oppurtunity for others to learn, but also to help contribute and make this project something useful to server owners.
+
 ## Why use Skyblock Core?
 This plugin was crafted with the mindset of code what has to be made, and only that. Compared to other plugins, Skyblock Core aims to have no bloat, meaning no throttle to your performance, and an easy to read code base. We aim to provide any and all functionality that a minecraft server owner would look for in plugins for Skyblock.
 
