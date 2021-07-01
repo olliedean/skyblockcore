@@ -22,6 +22,7 @@ That being said, the following problems may be present in my current code:
 - Money notes exploits (generating cash you don't have)
 - No auto completes
 - Lackluster command descriptions
+
 I'm pretty dumb, but these are all issues I can fix, I'm just trying to prioritize stuff, even if it's in a weird way.
 My recommendation is to only use this plugin once the releases hits version 1, or this message disappears from the README.
 Thank you for showing interest in my plugin though! I hope me open sourcing it gives both an oppurtunity for others to learn, but also to help contribute and make this project something useful to server owners.
