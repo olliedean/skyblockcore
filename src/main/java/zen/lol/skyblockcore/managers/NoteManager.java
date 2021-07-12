@@ -47,7 +47,7 @@ public class NoteManager {
         return false;
     }
 
-    public static boolean deposit(Player player){
+    public static boolean deposit(@org.jetbrains.annotations.NotNull Player player){
         ItemStack item = player.getInventory().getItemInMainHand();
         if(isNote(item)){
             NBTItem nbti = new NBTItem(item);

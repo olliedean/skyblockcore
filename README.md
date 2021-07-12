@@ -19,7 +19,6 @@ View the [Projects page](https://github.com/olliedean/skyblockcore/projects/1) t
 This project is VERY new and I am also very new to Java development.
 That being said, the following problems may be present in my current code:
 - Permissions not set up
-- Money notes exploits (generating cash you don't have)
 - No auto completes
 - Lackluster command descriptions
 

@@ -7,6 +7,8 @@
 
 # only enable this if you know what you're doing!
 debug: false
+join-message: "&7[&a&l+&7] &f%player%"
+leave-message: "&7[&c&l+&7] &f%player%"
 
 
 

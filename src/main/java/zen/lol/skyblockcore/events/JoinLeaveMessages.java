@@ -6,14 +6,18 @@ import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerJoinEvent;
 import org.bukkit.event.player.PlayerQuitEvent;
+import zen.lol.skyblockcore.Skyblockcore;
+
+import static sun.security.krb5.SCDynamicStoreConfig.getConfig;
 
 public class JoinLeaveMessages implements Listener {
+    Skyblockcore Main = Skyblockcore.getPlugin(Skyblockcore.class);
 
     @EventHandler
     public void JoinMessage(PlayerJoinEvent event){
         Player player = event.getPlayer();
-        event.setJoinMessage(ChatColor.GRAY + " [" + ChatColor.GREEN + "+" + ChatColor.GRAY + "] " + ChatColor.WHITE +
-                player.getDisplayName());
+        String joinMessage = Main.getConfig().getString("join-message");
+        event.setJoinMessage(ChatColor.translateAlternateColorCodes('&', joinMessage.replace("%player%", player.getName())));
 
         // once we save user data, make a check for a welcome message
     }
@@ -21,7 +25,7 @@ public class JoinLeaveMessages implements Listener {
     @EventHandler
     public void LeaveMessage(PlayerQuitEvent event){
         Player player = event.getPlayer();
-        event.setQuitMessage(ChatColor.GRAY + " [" + ChatColor.RED + "-" + ChatColor.GRAY + "] " + ChatColor.WHITE +
-                player.getDisplayName());
+        String leaveMessage = Main.getConfig().getString("leave-message");
+        event.setQuitMessage(ChatColor.translateAlternateColorCodes('&', leaveMessage.replace("%player%", player.getName())));
     }
 }

@@ -10,5 +10,5 @@ website: https://zen.lol/
 commands:
   withdraw:
     description: Withdraw a money note
-    permission: zen.withdraw
+    permission: sbc.money.withdraw
 
